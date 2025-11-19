@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Order Confirmation</title>
+  <style>
+    body {
+      font-family: Poppins, sans-serif;
+      background: #fffafc;
+      padding: 20px;
+    }
+    .summary {
+      background: white;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      max-width: 500px;
+      margin: 0 auto;
+    }
+    h2 { color: #e91e63; }
+    ul { padding-left: 20px; }
+    li { margin-bottom: 5px; }
+  </style>
+</head>
+<body>
+  <div class="summary">
+    <h2>Order Confirmed 🎉</h2>
+    <p><strong>Name:</strong> <span id="custName"></span></p>
+    <p><strong>Address:</strong> <span id="custAddress"></span></p>
+    <p><strong>Phone:</strong> <span id="custPhone"></span></p>
+    <p><strong>Payment Method:</strong> <span id="paymentMethod"></span></p>
+
+    <h3>Items Ordered:</h3>
+    <ul id="itemList"></ul>
+
+    <h3>Total: ₹<span id="totalAmount"></span></h3>
+  </div>
+
+  <script>
+    // Get details from sessionStorage
+    const name = sessionStorage.getItem('order_name') || '';
+    const address = sessionStorage.getItem('order_address') || '';
+    const phone = sessionStorage.getItem('order_phone') || '';
+    const paymentMethod = sessionStorage.getItem('payment_method') || '';
+    const items = JSON.parse(sessionStorage.getItem('ordered_items') || '[]');
+
+    // Fill customer details
+    document.getElementById('custName').textContent = name;
+    document.getElementById('custAddress').textContent = address;
+    document.getElementById('custPhone').textContent = phone;
+    document.getElementById('paymentMethod').textContent = paymentMethod;
+
+    // Show item list
+    const itemList = document.getElementById('itemList');
+    let total = 0;
+    items.forEach(item => {
+      const li = document.createElement('li');
+      li.textContent = `${item.name} — ₹${item.price}`;
+      itemList.appendChild(li);
+      total += item.price;
+    });
+    document.getElementById('totalAmount').textContent = total;
+  </script>
+</body>
+</html>

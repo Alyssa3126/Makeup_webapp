@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Your Cart - AlyBeauty</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <h1>Your Cart</h1>
+
+  <!-- Cart items will appear here -->
+  <div id="cartItemsContainer"></div>
+
+  <!-- Empty message -->
+  <p id="emptyMsg">Your cart is empty!</p>
+
+  <!-- Total price -->
+  <h2 id="totalPrice"></h2>
+
+  <!-- Clear button -->
+  <button id="clearCart" class="clear-btn">Clear Cart</button>
+
+  <script>
+  const cartItemsContainer = document.getElementById("cartItemsContainer");
+  const emptyMsg = document.getElementById("emptyMsg");
+  const totalPrice = document.getElementById("totalPrice");
+  const clearCartBtn = document.getElementById("clearCart");
+
+  let cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+
+  function showCart() {
+    if (cartItems.length === 0) {
+      emptyMsg.textContent = "Your cart is empty!";
+      cartItemsContainer.innerHTML = "";
+      totalPrice.textContent = "";
+      return;
+    }
+
+    emptyMsg.textContent = "";
+    cartItemsContainer.innerHTML = cartItems
+      .map(item => `
+        <div class="cart-item">
+          <img src="${item.image || ''}" alt="${item.name}" width="100">
+          <h3>${item.name}</h3>
+          <p>₹${item.price}</p>
+        </div>
+      `)
+      .join("");
+
+    // make sure price is treated as a number (remove any currency symbols if present)
+   const total = cartItems.reduce((sum, item) => {
+  const numeric = typeof item.price === "number"
+    ? item.price
+    : parseFloat(String(item.price).replace(/[^\d.]/g, "")) || 0;
+  return sum + numeric;
+}, 0);
+
+totalPrice.textContent = `Total: ₹${total.toFixed(2)}`; //
+  }
+
+  showCart();
+
+  clearCartBtn.addEventListener("click", () => {
+    cartItems = [];
+    localStorage.removeItem("cartItems");
+    localStorage.setItem("cartCount", 0);
+    showCart();
+  });
+</script>
+<a href="Orders.html"><button>Proceed to Checkout</button></a>
+</body>
+</html>
