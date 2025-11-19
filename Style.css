@@ -1,0 +1,284 @@
+.Products
+{
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
+    justify-content:center;
+    color:#ff66b2;
+    font-weight:bold;
+
+}
+body{
+    font-family: arial,sans-serif;
+    margin:0 ;
+    padding:0;
+    background-color:white;
+    color:#333;
+}
+header{
+    background-color:pink;
+    padding:10px 40px;
+    display: flex;
+    justify-content:space-between;
+    align-items:center;
+    position: sticky;
+    top:0;
+    z-index:100;
+}
+header a{
+    text-decoration: none;
+    margin-left: 15px;
+    color:#333;
+    font-weight:bold;
+}
+header a:hover{
+    color: #ff3366;
+}
+h1,h2,h3,h4,h5,h6,h7,h8,h9,h10,h11,h12,h13,h14,h15,h16,h17,h18,h19,h20{
+    color:#ff3399;
+    margin-left:20px;
+}
+P{
+    margin-left:20px;
+    font-size:16px;
+}
+.Products{
+    display:flex;
+    flex-wrap:wrap;
+    gap:20px;
+    padding:20px;
+    justify-content:flex-start;
+}
+.product-card{
+    background-color:#fff;
+    border:1px solid #ddd;
+    border-radius:10px;
+    width:200px;
+    padding:15px;
+    text-align:center;
+    box-shadow:2px 2px 10px rgba(0,0,0,0.1);
+    transition:transform 0.2s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    }
+    .product-card:hover{
+        transform:scale(1.05);
+    }
+    .product-card img{
+        width:100%;
+        height:150px;
+        object-fit:cover;
+        border-radius:8px;
+        margin-bottom:5px;
+    }
+    .product-card p.price{
+        font-weight:bold;
+        color:#ff3366;
+    }
+    .product-card button{
+        padding:8 px 15px;
+        background-color:#ff3366;
+        color:white;
+        border:none;
+        cursor:pointers;
+    }
+    .product-card button:hover{
+        background-color:#e6004c;
+    }
+    .logo{
+        font-family:'Brush script Mt',cursive;
+        font-size:28px;
+        font-size:600;
+        font-weight:600;
+        color: #ff3399;
+        text-shadow:1px 1px 3px rgba(0,0,0,0.2);
+        padding-left:20px;
+        display:inline-block;
+        transition:transform 0.3s ease,color 0.3s ease;
+    }
+    .logo:hover{
+        color:deeppink;
+        transform:scale(1,0.5);
+        cursor:pointer;
+    }
+    .banner{
+        background:linear-gradient(135deg,#ffe6f0);
+        text-align:center;
+        padding: 80px 20px;
+        color: #ff3399;
+        font-family: 'Arial',sans-serif;
+    }
+    .banner h1{
+        font-family:sans-serif;
+        font-size:48px;
+        font-weight:bold;
+        margin: 0 0 20px 0;
+        text-shadow:2px 2px 5px rgba(0,0,0,0.1);
+    }
+    .banner p{
+        font-size: 20px;
+        color:#ff66b2;
+        margin:0
+    }
+    .footer p{
+        font-family:'arial',sans-serif;
+        font-size:14px;
+        color:#666666;
+        text-align:center;
+        margin:15px 0;
+    }
+    .hero-banner {
+  position: relative;
+  width: 100%;
+  height: 400px; /* adjust height */
+  overflow: hidden;
+}
+
+/* Slideshow images */
+.slides {
+  display: flex;
+  width: 300%; /* 3 images → 300% */
+  height: 100%;
+  animation: slide 12s infinite;
+}
+
+.slides img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background-color:#000;
+}
+
+/* Text overlay */
+.hero-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  text-shadow: 2px 2px 5px rgba(0,0,0,0.6);
+}
+
+.hero-text h1 {
+  font-size: 48px;
+  margin: 0 0 10px;
+}
+
+.hero-text p {
+  font-size: 20px;
+}
+
+/* Slide animation */
+@keyframes slide {
+  0%   { transform: translateX(0%); }
+  33%  { transform: translateX(-100%); }
+  66%  { transform: translateX(-200%); }
+  100% { transform: translateX(0%); }
+}
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* full viewport height */
+  background: #fff0f5; /* soft pink background */
+}
+
+/* Login form styling */
+.login-form {
+  background: #ffffff;
+  padding: 40px 30px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  width: 300px;
+  text-align: center;
+}
+
+/* Form heading */
+.login-form{
+  margin-bottom: 20px;
+  color: #ff3399;
+  font-family: 'Brush Script MT', cursive;
+}
+
+/* Inputs styling */
+.login-form input {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+/* Submit button styling */
+.login-form button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 15px;
+  border: none;
+  border-radius: 8px;
+  background-color: #ff3399;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.login-form button:hover {
+ background-color: #ff66b2;
+}
+.buttons {
+  display: flex;
+}
+.cartAmount
+{
+  background-color: deeppink;
+  color: white;
+  gap:10px;
+  font-weight:bold;
+  font-size:1.1em
+}
+.cart{
+  display: flex;
+  align-items: center;
+  gap:10px;
+  font-weight: bold;
+  font-size:1.1em;
+}
+#clearCart {
+  background-color: #ff80b3;   /* soft pink */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(255, 128, 179, 0.3);
+  margin-top: 20px;
+}
+
+/* Hover effect */
+#clearCart:hover {
+  background-color: #ff4d94;   /* darker pink */
+  box-shadow: 0 6px 14px rgba(255, 77, 148, 0.4);
+  transform: translateY(-2px);
+}
+
+/* When clicked */
+#clearCart:active {
+  transform: translateY(1px);
+  box-shadow: 0 2px 6px rgba(255, 77, 148, 0.4);
+}
+.cart-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background: #ffe6f2;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 15px;
+  box-shadow: 0 2px 5px rgba(255, 128, 179, 0.3);
+}
